@@ -1,0 +1,54 @@
+.container {
+  width: 1040px;
+  margin: 0 auto; 
+  padding-bottom: 100px;
+}
+.header {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.header h1 {
+  margin: 0;
+}
+.header a {
+  padding-top: 8px;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+.gif {
+  position: absolute; 
+  width: 248px;
+  height: var(--height);
+  top: var(--top);
+  left: var(--left);
+  background: #333;
+}
+.gif h4 {
+  position: absolute; 
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+  font-size: 9px;
+  padding: 5px;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0,0,0,0.2);
+}
+.user {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.user h5 {
+  margin: 0 0 0 2px;
+  padding: 5px;
+  font-size: 11px;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0,0,0,0.2);
+}
