@@ -35,7 +35,7 @@ export const prepareGifList = (rawData) => {
       imgAttr: {
         width: WIDTH,
         height,
-        src: gif.images.original.url
+        src: gif.images.downsized.url
       },
       userImgAttr: {
         src: gif.user ? gif.user.avatar_url : '',
