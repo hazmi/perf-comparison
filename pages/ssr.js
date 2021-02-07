@@ -53,7 +53,7 @@ export default function Home({ gifs }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO')
   const rawGifs = await res.json()
 
