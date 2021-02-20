@@ -19,14 +19,15 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>CSR Rendering - Perf Comparison</title>
+        <title>CSR - Next.js Performance Comparison</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
-        <h1>Client Side Rendering (CSR) Page</h1>
-        <Link href="/ssr">
-          <a>Go to Server Side Rendering (SSR) Page</a>
-        </Link> 
+        <h1>Client Side Rendering (CSR)</h1>
+        <p>
+          Default <em>CSR</em> page. All API calls
+          and JavaScript processes happen in the browsers.
+        </p>
       </header>
       <main>
         <h2>Trending GIF's in GIPHY</h2>
@@ -58,7 +59,7 @@ export default function Home() {
       </main>
       <footer>
         <p>This is the end of the page.</p>
-        <p>Hazmi</p>
+        <p><a href="https://codepen.io/hazmi">Hazmi</a></p>
       </footer>
     </div>
   )

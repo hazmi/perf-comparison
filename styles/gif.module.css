@@ -5,11 +5,12 @@
 }
 .header {
   padding: 30px 0;
-  display: flex;
-  justify-content: space-between;
 }
 .header h1 {
   margin: 0;
+}
+.header p {
+  color: #aaa;
 }
 .header a {
   padding-top: 8px;

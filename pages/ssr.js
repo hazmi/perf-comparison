@@ -12,10 +12,12 @@ export default function Home({ gifs }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
-        <h1>Server Side Rendering (SSR) Page</h1>
-        <Link href="/csr">
-          <a>Go to Client Side Rendering (CSR) Page</a>
-        </Link> 
+        <h1>Server Side Rendering (SSR)</h1>
+        <p>
+          This <em>SSR</em> version is a little tweak from the CSR version. This
+          version handled the API calls and pre-processed the result on the
+          server-side by using the <code>getServerSideProps</code> function.
+        </p>
       </header>
       <main>
         <h2>Trending GIF's in GIPHY</h2>
@@ -47,7 +49,7 @@ export default function Home({ gifs }) {
       </main>
       <footer>
         <p>This is the end of the page.</p>
-        <p>Hazmi</p>
+        <p><a href="https://codepen.io/hazmi">Hazmi</a></p>
       </footer>
     </div>
   )

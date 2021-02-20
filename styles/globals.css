@@ -22,7 +22,62 @@ a {
 footer {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 12px;
   padding: 10px 0;
+  color: #333;
+}
+footer a {
+  color: #333;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+em {
+  color: #FF6C98;
+  font-style: normal;
+}
+code {
+  color: #FF6C98;
+  font-size: 0.9em;
+  font-family: Monaco, monospace, serif
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1040px;
+  margin: 0 auto; 
+  padding: 20px 0;
+}
+
+nav h3 {
+  font-size: 18px;
+  font-weight: normal;
+}
+nav h3 a {
+  color: #ccc;
+}
+nav h3 a:hover {
+  text-decoration: underline;
+}
+nav ul,
+nav li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul {
+  display: flex;
+}
+nav li a {
+  display: block;
+  padding: 10px 20px;
+  margin-left: -1px;
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+nav .current a {
+  background: rgba(255, 255, 255, 0.2);
 }

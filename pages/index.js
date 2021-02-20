@@ -1,65 +1,59 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Next.js Performance Comparison</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
+      <div>
+        <main className={styles.main}>
+          <h1>Next.js Performance Comparison</h1>
+          <section>
+            <h2>
+              <Link href="/csr">
+                <a>Client Side Rendering (CSR)</a>
+              </Link>
+            </h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Default <em>CSR</em> page. All API calls
+              and JavaScript processes happen in the browsers.
             </p>
-          </a>
-        </div>
-      </main>
+          </section>
+          <section>
+            <h2>
+              <Link href="/ssr">
+                <a>Server Side Rendering (SSR)</a>
+              </Link>
+            </h2>
+            <p>
+              This <em>SSR</em> version is a little tweak from the CSR version. This
+              version handled the API calls and pre-processed the result on the
+              server-side by using the <code>getServerSideProps</code> function.
+            </p>
+          </section>
+          <section>
+            <h2>
+              <Link href="/optimized">
+                <a>SSR + Optimized Image</a>
+              </Link>
+            </h2>
+            <p>
+              This SSR + Optimized Image is the SSR version of the page with the
+              additional images optimization using the <code>&lt;Image /&gt;</code> component
+              exported by <code>next/image</code>.
+            </p>
+          </section>
+        </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+        <footer className={styles.footer}>
+          <a href="https://codepen.io/hazmi">Hazmi</a>
+        </footer>
+      </div>
     </div>
-  )
+  );
 }

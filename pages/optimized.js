@@ -13,10 +13,12 @@ export default function Home({ gifs }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
-        <h1>Optimized Server Side Rendering (SSR) Page</h1>
-        <Link href="/csr">
-          <a>Go to Client Side Rendering (CSR) Page</a>
-        </Link> 
+        <h1>SSR + Optimized Image</h1>
+        <p>
+          This SSR + Optimized Image is the SSR version of the page with the
+          additional images optimization using the <code>&lt;Image /&gt;</code> component
+          exported by <code>next/image</code>.
+        </p> 
       </header>
       <main>
         <h2>Trending GIF's in GIPHY</h2>
@@ -48,7 +50,7 @@ export default function Home({ gifs }) {
       </main>
       <footer>
         <p>This is the end of the page.</p>
-        <p>Hazmi</p>
+        <p><a href="https://codepen.io/hazmi">Hazmi</a></p>
       </footer>
     </div>
   )
