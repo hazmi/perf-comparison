@@ -1,21 +1,71 @@
 .container {
-  display: flex;
-  align-items: center;
-  width: 1040px;
-  min-height: 100vh;
-  margin: 0 auto; 
+  /* display: flex;
+  align-items: center; */
+  /* max-width: 1040px; */
+  /* margin: 0 auto;  */
+  padding: 0 20px;
+}
+.curvedline {
+  --curved-lineHeight: 10;
+  --curved-lineWidth: 2;
+  --curved-lineColor: rgba(255,255,255,0.4);
+  --curved-lineSpread: 30; 
+  height: 20px;
+  width: calc(100% + 90px);
+  margin: 10px 0 0;
+  border: 0;
+  transform: translate(0);
+  background: paint(curved-line);
+  animation-duration: 3s;
+  animation-name: curvedLineAnimation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.curvedlineWrapper {
+  overflow: hidden; 
+}
+@keyframes curvedLineAnimation {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-90px);
+  }
+}
+
+.header {
+  padding-bottom: 5px;
+  border-bottom: 1px ;
+}
+.header p {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.main {
+  padding-bottom: 30px;
 }
 
 .main h1 {
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 26px;
+  font-weight: 900;
+}
+.main p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.main p a {
+  color:#ff9ebb;
+  border-bottom: 1px dotted #ff6c98;
 }
 .main h2 {
-  font-size: 24px;
-  margin-top: 2em;
+  font-size: 16px;
+  margin: 2em 0 0;
 }
 
+
 .footer {
-  margin: 5em 0 2em;
+  margin: 10px 0 2em;
   border: 0;
 }

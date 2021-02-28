@@ -1,11 +1,16 @@
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import '../styles/globals.css'
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Head from 'next/head';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <div>
+      <Head>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Noto+Serif&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+      </Head>
       {router.pathname === '/' ? null : (
         <nav>
           <h3>
