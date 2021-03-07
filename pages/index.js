@@ -1,35 +1,28 @@
 import Head from "next/head";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import styles from "../styles/Home.module.css";
-
-const DynamicComponentWithNoSSR = dynamic(
-  () => import("../helpers/curved-line"),
-  { ssr: false }
-);
 
 export default function Home() {
   return (
-    <div>
-      <div className={styles.container}>
-        <Head>
-          <title>Next.js Performance Comparison</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <DynamicComponentWithNoSSR />
-        <header className={styles.header}>
+    <>
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <Head>
+            <title>Next.js Performance Comparison</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
           <h1>Next.js Performance Comparison</h1>
           <p>
             This is an experimental site to check how Next.js performs with the
             various approaches.
           </p>
-        </header>
-      </div>
-      <div className={styles.curvedlineWrapper}>
-        <hr className={styles.curvedline} />
-      </div>
-      <div className={styles.container}>
-        <div className={styles.main}>
+        </div>
+        <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+          <hr />
+        </div>
+      </header>
+      <div className={styles.main}>
+        <div className={styles.container}>
           <section>
             <h2>
               <Link href="/csr">
@@ -47,6 +40,7 @@ export default function Home() {
               <a href="https://nextjs.org/docs/advanced-features/automatic-static-optimization">
                 Automatic Static Optimization
               </a>
+              .
             </p>
           </section>
           <section>
@@ -95,15 +89,6 @@ export default function Home() {
           </section>
         </div>
       </div>
-      <div className={styles.curvedlineWrapper}>
-        <hr className={styles.curvedline} />
-      </div>
-      <div className={styles.container}>
-        <footer className={styles.footer}>
-          <a href="https://codepen.io/hazmi">Hazmi</a>
-          <a href="https://github.com/hazmi/perf-comparison">Github</a>
-        </footer>
-      </div>
-    </div>
+    </>
   );
 }

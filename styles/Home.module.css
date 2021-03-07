@@ -1,45 +1,29 @@
 .container {
-  /* display: flex;
-  align-items: center; */
-  /* max-width: 1040px; */
-  /* margin: 0 auto;  */
   padding: 0 20px;
-}
-.curvedline {
-  --curved-lineHeight: 10;
-  --curved-lineWidth: 2;
-  --curved-lineColor: rgba(255,255,255,0.4);
-  --curved-lineSpread: 30; 
-  height: 20px;
-  width: calc(100% + 90px);
-  margin: 10px 0 0;
-  border: 0;
-  transform: translate(0);
-  background: paint(curved-line);
-  animation-duration: 3s;
-  animation-name: curvedLineAnimation;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-.curvedlineWrapper {
-  overflow: hidden; 
-}
-@keyframes curvedLineAnimation {
-  from {
-    transform: translate(0);
-  }
-  to {
-    transform: translate(-90px);
-  }
 }
 
 .header {
-  padding-bottom: 5px;
-  border-bottom: 1px ;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+  position: relative;
+  padding: 20px 0 10px;
+  background: linear-gradient(#acd6f3, #60a1cf);
+}
+
+.header hr {
+  --curved-lineWidth: 10;
+  --curved-lineColor: #acd6f3;
+}
+.header .curvedLineWrapper {
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+}
+.header h1  {
+  margin: 0;
 }
 .header p {
   font-family: 'Noto Serif', serif;
-  font-style: italic;
   font-size: 16px;
 }
 
@@ -64,8 +48,45 @@
   margin: 2em 0 0;
 }
 
-
-.footer {
-  margin: 10px 0 2em;
-  border: 0;
+@media (min-width:500px) {
+  .container {
+    max-width: 1040px;
+    margin: 0 auto; 
+  }
+  .header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header .container {
+    text-align: center;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+  }
+  .main .container {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    gap: 40px;
+  }
+  .main:before {
+    content: ' ';
+    flex: 1;
+  }
+  .main:after {
+    content: ' ';
+    flex: 2;
+  }
+  .main h2 {
+    font-size: 20px;
+  }
+  .main p {
+    margin-bottom: 0;
+  }
 }
