@@ -2,7 +2,6 @@ import Head from 'next/head';
 import MobileDetect from 'mobile-detect';
 import { prepareGifList } from '../helpers/prepareGifList';
 import styles from '../styles/gif.module.css'
-import data from '../data.json';
 
 export default function Home({ gifs }) {
   return (
