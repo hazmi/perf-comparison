@@ -52,11 +52,9 @@ export default function Home({ gifs }) {
 }
 
 export async function getServerSideProps(context) {
-  // const res = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO')
-  // const rawGifs = await res.json()
+  const res = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO')
+  const rawGifs = await res.json()
 
-  const rawGifs = data;
-  // const rawGifs = {data: []};
   const md = new MobileDetect(context.req.headers['user-agent']);
   let gifs;
 
