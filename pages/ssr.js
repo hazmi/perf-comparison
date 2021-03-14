@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import MobileDetect from 'mobile-detect';
 import { prepareGifList } from '../helpers/prepareGifList';
 import styles from '../styles/gif.module.css'
+import data from '../data.json';
 
 export default function Home({ gifs }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>SSR Rendering - Perf Comparison</title>
+        <title>SSR in Next.js v10.0.2 Performance Comparison</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
@@ -47,19 +47,29 @@ export default function Home({ gifs }) {
           })}
         </div>
       </main>
-      <footer>
-        <p>This is the end of the page.</p>
-        <p><a href="https://codepen.io/hazmi">Hazmi</a></p>
-      </footer>
     </div>
   )
 }
 
-export async function getServerSideProps() {
-  const res = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO')
-  const rawGifs = await res.json()
+export async function getServerSideProps(context) {
+  // const res = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO')
+  // const rawGifs = await res.json()
 
-  const gifs = prepareGifList(rawGifs.data);
+  const rawGifs = data;
+  // const rawGifs = {data: []};
+  const md = new MobileDetect(context.req.headers['user-agent']);
+  let gifs;
+
+  if(md.mobile()) {
+    gifs = prepareGifList(rawGifs.data, {
+      gutter: 14,
+      width: 158,
+      defaultColumn: [0,0]
+    });
+  } else {
+    gifs = prepareGifList(rawGifs.data);
+  }
+
   return {
     props: {
       gifs,

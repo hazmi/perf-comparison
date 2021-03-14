@@ -9,7 +9,10 @@
   padding: 20px 0 10px;
   background: linear-gradient(#acd6f3, #60a1cf);
 }
-
+.header sup {
+  font-size: 14px;
+  font-weight: normal;
+}
 .header hr {
   --curved-lineWidth: 10;
   --curved-lineColor: #acd6f3;

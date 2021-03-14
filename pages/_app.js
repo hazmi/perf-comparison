@@ -24,37 +24,47 @@ function MyApp({ Component, pageProps }) {
       <main id="main">
         {router.pathname === "/" ? null : (
           <header id="header">
-            <h3>
-              <Link href="/">
-                <a>Next.js Performance Comparison</a>
-              </Link>
-            </h3>
-            <nav>
-              <ul>
-                <li className={router.pathname === "/csr" ? "current" : ""}>
-                  <Link href="/csr">
-                    <a>CSR</a>
-                  </Link>
-                </li>
-                <li className={router.pathname === "/ssr" ? "current" : ""}>
-                  <Link href="/ssr">
-                    <a>SSR</a>
-                  </Link>
-                </li>
-                <li className={router.pathname === "/swr" ? "current" : ""}>
-                  <Link href="/swr">
-                    <a>SSR + SWR</a>
-                  </Link>
-                </li>
-                <li
-                  className={router.pathname === "/optimized" ? "current" : ""}
-                >
-                  <Link href="/optimized">
-                    <a>SSR + SWR + Optimized</a>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+            <div className="container">
+              <h3>
+                <Link href="/">
+                  <a>
+                    Next.js <sup>v10.0.2</sup> Performance Comparison
+                  </a>
+                </Link>
+              </h3>
+              <p>
+                This is an experimental site to check how Next.js performs with
+                the various approaches.
+              </p>
+              <nav>
+                <ul>
+                  <li className={router.pathname === "/csr" ? "current" : ""}>
+                    <Link href="/csr">
+                      <a>CSR</a>
+                    </Link>
+                  </li>
+                  <li className={router.pathname === "/ssr" ? "current" : ""}>
+                    <Link href="/ssr">
+                      <a>SSR</a>
+                    </Link>
+                  </li>
+                  <li className={router.pathname === "/swr" ? "current" : ""}>
+                    <Link href="/swr">
+                      <a>+ SWR</a>
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      router.pathname === "/optimized" ? "current" : ""
+                    }
+                  >
+                    <Link href="/optimized">
+                      <a> + Optimized Image</a>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
             <div className="curvedlineWrapper">
               <hr />
             </div>

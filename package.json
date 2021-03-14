@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "css-paint-polyfill": "^3.2.1",
+    "mobile-detect": "^1.4.5",
     "next": "10.0.6",
     "react": "17.0.1",
     "react-dom": "17.0.1"

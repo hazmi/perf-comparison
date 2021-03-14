@@ -8,10 +8,10 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.container}>
           <Head>
-            <title>Next.js Performance Comparison</title>
+            <title>Next.js v10.0.2 Performance Comparison</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <h1>Next.js Performance Comparison</h1>
+          <h1>Next.js <sup>v10.0.2</sup> Performance Comparison</h1>
           <p>
             This is an experimental site to check how Next.js performs with the
             various approaches.

@@ -2,23 +2,28 @@ import { getShortestColumnIndex } from './getShortestColumnIndex';
 
 const GUTTER = 16;
 const WIDTH = 248;
-const arrLeft = [
-  0,
-  WIDTH + GUTTER,
-  WIDTH + GUTTER + WIDTH + GUTTER,
-  WIDTH + GUTTER + WIDTH + GUTTER + WIDTH + GUTTER
-];
 
-const getHeight = (gif) => {
+const getHeight = (gif, width) => {
   const originalWidth = gif.images.original.width * 1;
   const originalHeight = gif.images.original.height * 1;
-  return (originalHeight / originalWidth) * WIDTH;
+  return (originalHeight / originalWidth) * width;
 }
 
-export const prepareGifList = (rawData) => {
-  let arrTop = [0,0,0,0];
+export const prepareGifList = (rawData,  params = {}) => {
+  const {
+    gutter = GUTTER,
+    width = WIDTH,
+    defaultColumn = [0,0,0,0]
+  } = params;
+  const arrLeft = [
+    0,
+    width + gutter,
+    width + gutter + width + gutter,
+    width + gutter + width + gutter + width + gutter
+  ];
+  let arrTop = defaultColumn;
   const data = rawData.map((gif) => {
-    const height = getHeight(gif);
+    const height = getHeight(gif, width);
     const shortestIndex = getShortestColumnIndex(arrTop);
     const style = {
       '--height': `${height}px`,
@@ -26,14 +31,14 @@ export const prepareGifList = (rawData) => {
       '--left': `${arrLeft[shortestIndex]}px`,
     };
 
-    arrTop[shortestIndex] = arrTop[shortestIndex] + height + GUTTER ;
+    arrTop[shortestIndex] = arrTop[shortestIndex] + height + gutter ;
 
     return {
       id: gif.id,
       style,
       title: gif.title,
       imgAttr: {
-        width: WIDTH,
+        width: width,
         height,
         src: gif.images.downsized.url
       },
