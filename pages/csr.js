@@ -4,7 +4,7 @@ import MobileDetect from 'mobile-detect';
 import { prepareGifList } from "../helpers/prepareGifList";
 import styles from "../styles/gif.module.css";
 
-export default function Home() {
+export default function CSR() {
   const [gifs, setGifs] = useState({ data: [], containerHeight: 0 });
 
   useEffect(() => {
