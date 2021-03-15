@@ -58,27 +58,12 @@ export default function Home() {
           </section>
           <section>
             <h2>
-              <Link href="/swr">
-                <a>Server Side Rendering (SSR) + SWR</a>
-              </Link>
-            </h2>
-            <p>
-              This version uses the SSR approach and{" "}
-              <a href="https://swr.vercel.app/">SWR</a>, a data fetching library
-              from the team behind Next.js itself. With the SWR, it can help to
-              cache the data for an additional performance improvement.
-            </p>
-          </section>
-          <section>
-            <h2>
               <Link href="/optimized">
-                <a>Server Side Rendering (SSR) + SWR + Optimized Image</a>
+                <a>Server Side Rendering (SSR) + Optimized Image</a>
               </Link>
             </h2>
             <p>
-              This version uses the SSR approach and SWR, a data fetching
-              library from the team behind Next.js itself. With the SWR, it can
-              cache the data for additional performance improvement.
+              This version uses the SSR.
               Additionally, this version also does an{" "}
               <a href="https://nextjs.org/docs/basic-features/image-optimization">
                 image optimization

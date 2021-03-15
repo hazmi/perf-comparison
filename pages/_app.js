@@ -48,18 +48,13 @@ function MyApp({ Component, pageProps }) {
                       <a>SSR</a>
                     </Link>
                   </li>
-                  <li className={router.pathname === "/swr" ? "current" : ""}>
-                    <Link href="/swr">
-                      <a>+ SWR</a>
-                    </Link>
-                  </li>
                   <li
                     className={
                       router.pathname === "/optimized" ? "current" : ""
                     }
                   >
                     <Link href="/optimized">
-                      <a> + Optimized Image</a>
+                      <a>SSR + Optimized Image</a>
                     </Link>
                   </li>
                 </ul>
