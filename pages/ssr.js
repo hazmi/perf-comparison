@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import MobileDetect from 'mobile-detect';
-import { prepareGifList } from '../helpers/prepareGifList';
-import styles from '../styles/gif.module.css'
+import Head from "next/head";
+import MobileDetect from "mobile-detect";
+import { prepareGifList } from "../helpers/prepareGifList";
+import styles from "../styles/gif.module.css";
 
-export default function Home({ gifs }) {
+export default function SSR({ gifs }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,16 +23,12 @@ export default function Home({ gifs }) {
         <div
           className={styles.wrapper}
           style={{
-            height: gifs.containerHeight
+            height: gifs.containerHeight,
           }}
         >
           {gifs.data.map((gif) => {
             return (
-              <section
-                key={gif.id}
-                className={styles.gif}
-                style={gif.style}
-              >
+              <section key={gif.id} className={styles.gif} style={gif.style}>
                 <h4>{gif.title}</h4>
                 <img {...gif.imgAttr} />
                 {gif.userDisplayName ? (
@@ -42,26 +38,28 @@ export default function Home({ gifs }) {
                   </aside>
                 ) : null}
               </section>
-            )
+            );
           })}
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO')
-  const rawGifs = await res.json()
+  const res = await fetch(
+    "https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO"
+  );
+  const rawGifs = await res.json();
 
-  const md = new MobileDetect(context.req.headers['user-agent']);
+  const md = new MobileDetect(context.req.headers["user-agent"]);
   let gifs;
 
-  if(md.mobile()) {
+  if (md.mobile()) {
     gifs = prepareGifList(rawGifs.data, {
       gutter: 14,
       width: 158,
-      defaultColumn: [0,0]
+      defaultColumn: [0, 0],
     });
   } else {
     gifs = prepareGifList(rawGifs.data);
@@ -71,5 +69,5 @@ export async function getServerSideProps(context) {
     props: {
       gifs,
     },
-  }
+  };
 }
