@@ -1,40 +1,38 @@
-import { useEffect, useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image';
-import { prepareGifList } from '../helpers/prepareGifList';
-import styles from '../styles/gif.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import MobileDetect from "mobile-detect";
+import { prepareGifList } from "../helpers/prepareGifList";
+import styles from "../styles/gif.module.css";
 
-export default function Home({ gifs }) {
+export default function Optimized({ gifs }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>SSR Rendering with Optimized Image - Perf Comparison</title>
+        <title>SSR in Next.js v10.0.2 Performance Comparison</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
-        <h1>SSR + Optimized Image</h1>
+        <h1>Server Side Rendering (SSR)</h1>
         <p>
-          This SSR + Optimized Image is the SSR version of the page with the
-          additional images optimization using the <code>&lt;Image /&gt;</code> component
-          exported by <code>next/image</code>.
-        </p> 
+          This version uses the SSR. Additionally, this version also does an{" "}
+          <a href="https://nextjs.org/docs/basic-features/image-optimization">
+            image optimization
+          </a>{" "}
+          using the <code>&lt;Image /&gt;</code> component exported by{" "}
+          <code>next/image</code>.
+        </p>
       </header>
       <main>
         <h2>Trending GIF's in GIPHY</h2>
         <div
           className={styles.wrapper}
           style={{
-            height: gifs.containerHeight
+            height: gifs.containerHeight,
           }}
         >
           {gifs.data.map((gif) => {
             return (
-              <section
-                key={gif.id}
-                className={styles.gif}
-                style={gif.style}
-              >
+              <section key={gif.id} className={styles.gif} style={gif.style}>
                 <h4>{gif.title}</h4>
                 <Image {...gif.imgAttr} />
                 {gif.userDisplayName ? (
@@ -44,26 +42,36 @@ export default function Home({ gifs }) {
                   </aside>
                 ) : null}
               </section>
-            )
+            );
           })}
         </div>
       </main>
-      <footer>
-        <p>This is the end of the page.</p>
-        <p><a href="https://codepen.io/hazmi">Hazmi</a></p>
-      </footer>
     </div>
-  )
+  );
 }
 
-export async function getServerSideProps() {
-  const res = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO')
-  const rawGifs = await res.json()
+export async function getServerSideProps(context) {
+  const res = await fetch(
+    "https://api.giphy.com/v1/gifs/trending?api_key=xpdrHwpGnEbznpNzYnB4bSAuDAadz8tO"
+  );
+  const rawGifs = await res.json();
 
-  const gifs = prepareGifList(rawGifs.data);
+  const md = new MobileDetect(context.req.headers["user-agent"]);
+  let gifs;
+
+  if (md.mobile()) {
+    gifs = prepareGifList(rawGifs.data, {
+      gutter: 14,
+      width: 158,
+      defaultColumn: [0, 0],
+    });
+  } else {
+    gifs = prepareGifList(rawGifs.data);
+  }
+
   return {
     props: {
       gifs,
     },
-  }
+  };
 }
