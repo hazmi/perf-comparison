@@ -77,7 +77,7 @@ function MyApp({ Component, pageProps }) {
           <hr />
         </div>
         <div className="container">
-          <a href="https://codepen.io/hazmi">Hazmi</a>
+          <a href="https://hazmi.id">Hazmi</a>
           <a href="https://github.com/hazmi/perf-comparison">Github</a>
         </div>
       </footer>
