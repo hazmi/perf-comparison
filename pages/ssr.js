@@ -13,13 +13,19 @@ export default function SSR({ gifs }) {
       <header className={styles.header}>
         <h1>Server Side Rendering (SSR)</h1>
         <p>
-          This <em>SSR</em> version is a little tweak from the CSR version. This
+          This SSR version is a minor tweak from the default version. This
           version handled the API calls and pre-processed the result on the
-          server-side by using the <code>getServerSideProps</code> function.
+          server-side by utilizing the
+          <code>getServerSideProps</code> function. This approach has a slight
+          drawback as the <code>getServerSideProps</code> will{" "}
+          <a href="https://nextjs.org/docs/advanced-features/automatic-static-optimization#how-it-works">
+            cancel the pre-renders behavior
+          </a>
+          .
         </p>
       </header>
       <main>
-        <h2>Trending GIF's in GIPHY</h2>
+        <h2>Trending GIF's in <a href="https://giphy.com">GIPHY</a></h2>
         <div
           className={styles.wrapper}
           style={{
