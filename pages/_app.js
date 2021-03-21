@@ -38,9 +38,14 @@ function MyApp({ Component, pageProps }) {
               </p>
               <nav>
                 <ul>
-                  <li className={router.pathname === "/csr" ? "current" : ""}>
-                    <Link href="/csr">
-                      <a>CSR</a>
+                  <li className={router.pathname === "/default" ? "current" : ""}>
+                    <Link href="/default">
+                      <a>Default</a>
+                    </Link>
+                  </li>
+                  <li className={router.pathname === "/default-optimized" ? "current" : ""}>
+                    <Link href="/default-optimized">
+                      <a>Default <span>+ Opt. Image</span></a>
                     </Link>
                   </li>
                   <li className={router.pathname === "/ssr" ? "current" : ""}>
@@ -50,11 +55,11 @@ function MyApp({ Component, pageProps }) {
                   </li>
                   <li
                     className={
-                      router.pathname === "/optimized" ? "current" : ""
+                      router.pathname === "/ssr-optimized" ? "current" : ""
                     }
                   >
-                    <Link href="/optimized">
-                      <a>SSR + Optimized Image</a>
+                    <Link href="/ssr-optimized">
+                      <a>SSR <span>+ Opt. Image</span></a>
                     </Link>
                   </li>
                 </ul>
