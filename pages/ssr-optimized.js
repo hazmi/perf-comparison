@@ -8,11 +8,11 @@ export default function Optimized({ gifs }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>SSR in Next.js v10.0.2 Performance Comparison</title>
+        <title>SSR + Optimized Image in Next.js v10.0.2 Performance Comparison</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
-        <h1>Server Side Rendering (SSR)</h1>
+        <h1>Server Side Rendering (SSR) + Optimized Image</h1>
         <p>
           This version uses the SSR. Additionally, this version also does an{" "}
           <a href="https://nextjs.org/docs/basic-features/image-optimization">
@@ -23,7 +23,7 @@ export default function Optimized({ gifs }) {
         </p>
       </header>
       <main>
-        <h2>Trending GIF's in GIPHY</h2>
+        <h2>Trending GIF's in <a href="https://giphy.com">GIPHY</a></h2>
         <div
           className={styles.wrapper}
           style={{
