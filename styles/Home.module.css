@@ -34,6 +34,10 @@
   padding-bottom: 30px;
 }
 
+.main section:nth-child(2) {
+  grid-row: 2;
+}
+
 .main h1 {
   font-size: 26px;
   font-weight: 900;
