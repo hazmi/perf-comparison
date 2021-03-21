@@ -70,7 +70,7 @@ export default function Home() {
               This SSR version is a minor tweak from the default version. This
               version handled the API calls and pre-processed the result on the
               server-side by utilizing the
-              <code>getServerSideProps</code> function. This method has a slight
+              <code>getServerSideProps</code> function. This approach has a slight
               drawback as the <code>getServerSideProps</code> will{" "}
               <a href="https://nextjs.org/docs/advanced-features/automatic-static-optimization#how-it-works">
                 cancel the pre-renders behavior
