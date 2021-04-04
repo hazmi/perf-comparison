@@ -1,6 +1,6 @@
 import { getShortestColumnIndex } from './getShortestColumnIndex';
 
-const GUTTER = 16;
+const GUTTER = 6;
 const WIDTH = 248;
 
 const getHeight = (gif, width) => {

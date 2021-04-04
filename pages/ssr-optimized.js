@@ -85,8 +85,8 @@ export async function getServerSideProps(context) {
 
   if (md.mobile()) {
     gifs = prepareGifList(rawGifs.data, {
-      gutter: 14,
-      width: 158,
+      gutter: 6,
+      width: 162,
       defaultColumn: [0, 0],
     });
   } else {
