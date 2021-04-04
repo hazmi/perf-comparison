@@ -26,11 +26,35 @@ export default function Home() {
       <div className={styles.main}>
         <div className={styles.container}>
           <section>
-            <h2>
-              <Link href="/default">
-                <a>Default (CSR with Pre-renders)</a>
-              </Link>
-            </h2>
+            <header>
+              <h2>
+                <Link href="/default">
+                  <a>Default (CSR with Pre-renders)</a>
+                </Link>
+              </h2>
+              <div className={styles.perf}>
+                <p className="hide">Performance score:</p>
+                <ul>
+                  <li className={styles.perf_need_improvement}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault&tab=mobile">
+                      <span className={styles.perf_label}>Mobile</span>
+                      <span className={styles.perf_score}>69</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                  <li className={styles.perf_need_improvement}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault&tab=desktop">
+                      <span className={styles.perf_label}>Desktop</span>
+                      <span className={styles.perf_score}>74</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </header>
+            <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+              <hr />
+            </div>
             <p>
               By default,{" "}
               <a href="https://nextjs.org/docs/basic-features/pages">
@@ -45,11 +69,35 @@ export default function Home() {
             </p>
           </section>
           <section>
-            <h2>
-              <Link href="/default-optimized">
-                <a>Default (CSR with Pre-renders) + Image Optmization</a>
-              </Link>
-            </h2>
+            <header>
+              <h2>
+                <Link href="/default-optimized">
+                  <a>Default (CSR with Pre-renders) + Image Optmization</a>
+                </Link>
+              </h2>
+              <div className={styles.perf}>
+                <p className="hide">Performance score:</p>
+                <ul>
+                  <li className={styles.perf_good}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault-optimized&tab=mobile">
+                      <span className={styles.perf_label}>Mobile</span>
+                      <span className={styles.perf_score}>92</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                  <li className={styles.perf_good}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault-optimized&tab=desktop">
+                      <span className={styles.perf_label}>Desktop</span>
+                      <span className={styles.perf_score}>97</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </header>
+            <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+              <hr />
+            </div>
             <p>
               This version uses the Default (CSR with Pre-renders) version.
               Additionally, this version does an{" "}
@@ -61,11 +109,35 @@ export default function Home() {
             </p>
           </section>
           <section>
-            <h2>
-              <Link href="/ssr">
-                <a>Server Side Rendering (SSR)</a>
-              </Link>
-            </h2>
+            <header>
+              <h2>
+                <Link href="/ssr">
+                  <a>Server Side Rendering (SSR)</a>
+                </Link>
+              </h2>
+              <div className={styles.perf}>
+                <p className="hide">Performance score:</p>
+                <ul>
+                  <li className={styles.perf_need_improvement}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fssr&tab=mobile">
+                      <span className={styles.perf_label}>Mobile</span>
+                      <span className={styles.perf_score}>65</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                  <li className={styles.perf_need_improvement}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fssr&tab=desktop">
+                      <span className={styles.perf_label}>Desktop</span>
+                      <span className={styles.perf_score}>76</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </header>
+            <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+              <hr />
+            </div>
             <p>
               This SSR version is a minor tweak from the default version. This
               version handled the API calls and pre-processed the result on the
@@ -79,11 +151,35 @@ export default function Home() {
             </p>
           </section>
           <section>
-            <h2>
-              <Link href="/optimized">
-                <a>Server Side Rendering (SSR) + Optimized Image</a>
-              </Link>
-            </h2>
+            <header>
+              <h2>
+                <Link href="/ssr-optimized">
+                  <a>Server Side Rendering (SSR) + Optimized Image</a>
+                </Link>
+              </h2>
+              <div className={styles.perf}>
+                <p className="hide">Performance score:</p>
+                <ul>
+                  <li className={styles.perf_good}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fssr-optimized&tab=mobile">
+                      <span className={styles.perf_label}>Mobile</span>
+                      <span className={styles.perf_score}>93</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                  <li className={styles.perf_good}>
+                    <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fssr-optimized&tab=desktop">
+                      <span className={styles.perf_label}>Desktop</span>
+                      <span className={styles.perf_score}>99</span>
+                      <span className={styles.perf_total}>/100</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </header>
+            <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+              <hr />
+            </div>
             <p>
               This version uses the SSR version. Additionally, this version also
               does an{" "}

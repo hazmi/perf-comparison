@@ -24,6 +24,9 @@ a {
 * {
   box-sizing: border-box;
 }
+.hide {
+  display: none;
+}
 
 #main {
   flex: 1;

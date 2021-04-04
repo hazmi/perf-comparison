@@ -29,15 +29,12 @@
   font-family: 'Noto Serif', serif;
   font-size: 16px;
 }
-
 .main {
   padding-bottom: 30px;
 }
-
 .main section:nth-child(2) {
   grid-row: 2;
 }
-
 .main h1 {
   font-size: 26px;
   font-weight: 900;
@@ -45,14 +42,79 @@
 .main p {
   font-size: 14px;
   line-height: 1.5;
+  margin-top: 4px;
 }
 .main p a {
   color:#ff9ebb;
   border-bottom: 1px dotted #ff6c98;
 }
+.main header {
+  margin: 2em 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .main h2 {
   font-size: 16px;
-  margin: 2em 0 0;
+  padding-right: 20px;
+}
+.main hr {
+  --curved-lineHeight: 3;
+  --curved-lineWidth: 2;
+  --curved-lineColor: rgba(255,255,255,0.2);
+  --curved-lineSpread: 30;
+  height: 10px;
+  width: calc(100% + 90px);
+  margin: 5px 0 0;
+}
+.main header p,
+.main header h2 {
+  margin: 0;
+  line-height: 1;
+}
+.perf ul,
+.perf li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.perf ul {
+  display: flex;
+}
+.perf a {
+  display: flex;
+  position: relative;
+  align-items: baseline;
+  padding-left: 18px;
+  color: #fff;
+}
+.perf_label {
+  position: absolute;
+  bottom: 4px;
+  left: 17px;
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 100;
+  text-transform: uppercase;
+  transform-origin: bottom left;
+  transform: rotate(270deg);
+  color: #fff;
+}
+.perf_score {
+  font-size: 25px;
+  font-weight: bold;
+}
+.perf_total {
+  font-size: 8px;
+}
+.perf_good .perf_score {
+  color: #29f343;
+}
+.perf_need_improvement .perf_score {
+  color: #ffb936;
+}
+.perf_bad .perf_score {
+  color: #FF3939;
 }
 
 @media (min-width:500px) {
