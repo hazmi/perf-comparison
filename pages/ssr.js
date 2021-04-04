@@ -11,13 +11,36 @@ export default function SSR({ gifs }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
-        <h1>Server Side Rendering (SSR)</h1>
+        <div className={styles.titleWrapper}>
+          <h1>Server Side Rendering (SSR)</h1>
+          <div className={styles.perf}>
+            <p className="hide">Performance score:</p>
+            <ul>
+              <li className={styles.perf_need_improvement}>
+                <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fssr&tab=mobile">
+                  <span className={styles.perf_label}>Mobile</span>
+                  <span className={styles.perf_score}>65</span>
+                  <span className={styles.perf_total}>/100</span>
+                </a>
+              </li>
+              <li className={styles.perf_need_improvement}>
+                <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fssr&tab=desktop">
+                  <span className={styles.perf_label}>Desktop</span>
+                  <span className={styles.perf_score}>76</span>
+                  <span className={styles.perf_total}>/100</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+          <hr />
+        </div>
         <p>
           This SSR version is a minor tweak from the default version. This
           version handled the API calls and pre-processed the result on the
-          server-side by utilizing the <code>getServerSideProps</code> function.
-          This approach has a slight drawback as the{" "}
-          <code>getServerSideProps</code> will{" "}
+          server-side by utilizing the <code>getServerSideProps</code> function. This approach has a slight
+          drawback as the <code>getServerSideProps</code> will{" "}
           <a href="https://nextjs.org/docs/advanced-features/automatic-static-optimization#how-it-works">
             cancel the pre-renders behavior
           </a>
@@ -25,9 +48,7 @@ export default function SSR({ gifs }) {
         </p>
       </header>
       <main>
-        <h2>
-          Trending GIF's in <a href="https://giphy.com">GIPHY</a>
-        </h2>
+        <h2>Trending GIF's in <a href="https://giphy.com">GIPHY</a></h2>
         <div
           className={styles.wrapper}
           style={{

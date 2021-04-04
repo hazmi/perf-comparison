@@ -36,7 +36,31 @@ export default function CSR() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <header className={styles.header}>
-          <h1>Default (CSR with Pre-renders)</h1>
+          <div className={styles.titleWrapper}>
+            <h1>Default (CSR with Pre-renders)</h1>
+            <div className={styles.perf}>
+              <p className="hide">Performance score:</p>
+              <ul>
+                <li className={styles.perf_need_improvement}>
+                  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault&tab=mobile">
+                    <span className={styles.perf_label}>Mobile</span>
+                    <span className={styles.perf_score}>69</span>
+                    <span className={styles.perf_total}>/100</span>
+                  </a>
+                </li>
+                <li className={styles.perf_need_improvement}>
+                  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault&tab=desktop">
+                    <span className={styles.perf_label}>Desktop</span>
+                    <span className={styles.perf_score}>74</span>
+                    <span className={styles.perf_total}>/100</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+            <hr />
+          </div>
           <p>
             By default,{" "}
             <a href="https://nextjs.org/docs/basic-features/pages">

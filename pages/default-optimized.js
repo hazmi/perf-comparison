@@ -37,7 +37,31 @@ export default function CSR() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <header className={styles.header}>
-          <h1>Default (CSR with Pre-renders) + Image Optmization</h1>
+          <div className={styles.titleWrapper}>
+            <h1>Default (CSR with Pre-renders) + Image Optmization</h1>
+            <div className={styles.perf}>
+              <p className="hide">Performance score:</p>
+              <ul>
+                <li className={styles.perf_good}>
+                  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault-optimized&tab=mobile">
+                    <span className={styles.perf_label}>Mobile</span>
+                    <span className={styles.perf_score}>92</span>
+                    <span className={styles.perf_total}>/100</span>
+                  </a>
+                </li>
+                <li className={styles.perf_good}>
+                  <a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fnextjs-performance.hazmi.id%2Fdefault-optimized&tab=desktop">
+                    <span className={styles.perf_label}>Desktop</span>
+                    <span className={styles.perf_score}>97</span>
+                    <span className={styles.perf_total}>/100</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={`${styles.curvedLineWrapper} curvedlineWrapper`}>
+            <hr />
+          </div>
           <p>
             This version uses the Default (CSR with Pre-renders) version.
             Additionally, this version does an{" "}
