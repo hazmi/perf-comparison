@@ -143,6 +143,7 @@ hr {
   position: absolute;
   bottom: -10px;
   width: 100%;
+  pointer-events: none;
 }
 #header h3 {
   font-size: 18px;
